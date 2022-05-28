@@ -10,7 +10,7 @@ keys = [False, False, False, False]
 playerpos=[100,100]
 
 # 3 - Load images
-player = pygame.image.load("resources/images/dude.png")
+player = pygame.image.load("resources/images/natchobacho.png")
 grass = pygame.image.load("resources/images/grass.png")
 castle = pygame.image.load("resources/images/castle.png")
 
