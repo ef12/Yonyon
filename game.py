@@ -6,6 +6,8 @@ from pygame.locals import *
 # 2 - Initialize the game
 pygame.init()
 width, height = 640, 480
+nachobachoWidth, nachobachoHeight = 66, 78
+
 screen=pygame.display.set_mode((width, height))
 keys = [False, False, False, False, False, False]
 playerpos=[100,100]
@@ -74,13 +76,17 @@ while 1:
             exit(0)
     # 9 - Move player
     if keys[0]:
-        playerpos[1]-=1
+        if (nachobachoHeight/2) <= playerpos[1]:
+            playerpos[1]-=1
     elif keys[2]:
-        playerpos[1]+=1
+        if (height - (nachobachoHeight/2)) >= playerpos[1]:
+            playerpos[1]+=1
     if keys[1]:
-        playerpos[0]-=1
+        if (nachobachoWidth/2) <= playerpos[0]:
+            playerpos[0]-=1
     elif keys[3]:
-        playerpos[0]+=1
+        if (width - (nachobachoWidth/2)) >= playerpos[0]:
+            playerpos[0]+=1
     elif keys[4]:
         angle += 0.5
     elif keys[5]:
